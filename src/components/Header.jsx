@@ -6,37 +6,38 @@ import { BsBagFill, BsBag, BsFillHeartFill, BsHeart, BsSearch } from 'react-icon
 
 export const Header = () => {
     return (
-        <header>
+        <header className="header">
+            <div>
             <AnnouncementBar />
             <nav className="navbar">
                 <div className="logo">GOLDEN SHOE</div>
                 <ul className="categories-container">
                     <li className="category-item">
-                        <div className="header parent">Mens
+                        <div className="cat-header parent">Mens
                             <DropdownMenu className="dropdown-item"/>
                         </div>
                         {/* <DropdownMenu className="dropdown-item"/> */}
                     </li>
                     <li className="category-item">
-                        <div className="header parent">Womens
+                        <div className="cat-header parent">Womens
                             <DropdownMenu className="dropdown-item"/>
                         </div>
                     </li>
                     <li className="category-item">
-                        <div className="header parent">Kids
+                        <div className="cat-header parent">Kids
                             <DropdownMenu className="dropdown-item"/>
                         </div>
                     </li>
                     <li className="category-item">
-                        <p className="header">Sale</p>
+                        <p className="cat-header">Sale</p>
                     </li>
                     <li className="category-item">
-                    <p className="header">About</p>
+                    <p className="cat-header">About</p>
                     </li>
                 </ul>
                 <div className="search-container">
                     <BsSearch className="icon"/>
-                    <input type="text" name="search"/>
+                    <input type="text" name="search" placeholder="Search"/>
                 </div>
                 <ul className="icons-container">
                     <li><BsFillHeartFill /></li>
@@ -45,6 +46,7 @@ export const Header = () => {
                     <li><BsBag /></li>
                 </ul>
             </nav>
+            </div>
         </header>
     )
 }

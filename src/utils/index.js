@@ -1,21 +1,3 @@
-// import $ from 'jquery';
-
-// const showDropDownMenu = (element) => {
-//     console.log(element, 'HOVERED OVER')
-//     const item = element.currentTarget;
-//     console.log(item, 'item')
-//     console.log(item.parent(), 'parent')
-//     // item.parent().find(".dropdown-menu").css( "opacity", "1" );
-// }
-
-// const hideDropdownMenu = () => {
-//     $(".dropdown-menu").css( "opacity", "0" );
-// }
-
-// const handleDropDownNavMenu = () => {
-//     console.log('HEELLLOOOO')
-//     $('.category-item .header').hover( showDropDownMenu, hideDropdownMenu )
-// }
 const showDropDownMenu = (event) => {
     console.log('heyyy')
     const item = event.currentTarget;
@@ -45,6 +27,6 @@ const handleDropDownNavMenu = () => {
       })
 }
 
-handleDropDownNavMenu();
+// handleDropDownNavMenu();
 
-export default handleDropDownNavMenu;
+// export default handleDropDownNavMenu;
