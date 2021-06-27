@@ -1,17 +1,39 @@
-import React from 'react'
+import { React, useState, useEffect } from 'react'
+
+import { Link } from 'react-router-dom';
+
 import AnnouncementBar from './AnnouncementBar'
 import { DropdownMenu } from './DropdownMenu'
-import showDropDownMenu from '../utils'
+import { Basket } from './Basket';
+import {showDropDownMenu} from '../utils'
 
 import { BsBagFill, BsBag, BsFillHeartFill, BsHeart, BsSearch } from 'react-icons/bs';
 
 export const Header = () => {
+
+    const [showBasket, setshowBasket] = useState(false)
+
+    const handleBasketVisibility = () => {
+        console.log('basket clicked', showBasket)
+        const basket = document.querySelector( ".basket-container" );
+        if( showBasket )
+        {
+            setshowBasket( false )
+            basket.style.right = "-520px";
+        }
+        else
+        {
+            setshowBasket( true )
+            basket.style.right = "0";
+        }
+    }
     return (
-        <header className="header">
+        <header className="header-container">
             <div>
+            <Basket handleBasketVisibility={handleBasketVisibility}/>
             <AnnouncementBar />
             <nav className="navbar">
-                <div className="logo">GOLDEN SHOE</div>
+                <Link to="/"><div className="logo">GOLDEN SHOE</div></Link>
                 <ul className="categories-container">
                     <li className="category-item">
                         <div className="cat-header parent" onClick={showDropDownMenu}>Mens
@@ -41,10 +63,10 @@ export const Header = () => {
                     <input type="text" name="search" placeholder="Search"/>
                 </div>
                 <ul className="icons-container">
-                    <li><BsFillHeartFill /></li>
+                    {/* <li><BsFillHeartFill /></li> */}
                     <li><BsHeart /></li>
-                    <li><BsBagFill /></li>
-                    <li><BsBag /></li>
+                    {/* <li><BsBagFill /></li> */}
+                    <li onClick={handleBasketVisibility}><BsBag /></li>
                 </ul>
             </nav>
             </div>
