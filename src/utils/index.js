@@ -1,4 +1,4 @@
-const showDropDownMenu = (event) => {
+export const showDropDownMenu = (event) => {
     const dropdownMenus = document.querySelectorAll( ".dropdown-menu" );
     // for( let i = 0; i < dropdownMenus.length; i++ )
     // {
@@ -48,4 +48,24 @@ const showDropDownMenu = (event) => {
 
 // handleDropDownNavMenu();
 
-export default showDropDownMenu;
+// export const handleAddToWishlist = (element) => {
+//     const { target } = element;
+//     console.log(target)
+    
+//     if( target.dataset.add === "true" )
+//     {
+//         const parent = target.parentElement;
+//         target.style.display = "none";
+//         const fullHeart = parent.querySelector( ".full-heart" );
+//         fullHeart.style.display = "block"
+//     }
+//     else if( target.dataset.remove === "true" )
+//     {
+//         const parent = target.parentElement.parentElement;
+//         target.parent.style.display = "none";
+//         const emptyHeart = parent.querySelector( ".empty-heart" );
+//         emptyHeart.style.display = "block";
+//     }
+// }
+
+// export default {showDropDownMenu, handleAddToWishlist};

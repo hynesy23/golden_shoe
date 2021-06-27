@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const HomepageCollectionCard = ({ category}) => {
     return (
@@ -6,7 +7,9 @@ export const HomepageCollectionCard = ({ category}) => {
             <img src={category.image} alt={category.name} />
             <div className="textbox">
                 <div className="name">{category.name}</div>
-                <div className="cta">{category.cta}</div>
+                <Link className="cta" to={`${category.link}`}>
+                    <div>{category.cta}</div>
+                </Link>
             </div>
         </div>
     )

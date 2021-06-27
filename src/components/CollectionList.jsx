@@ -15,13 +15,13 @@ const categories = [
         name: "Women's Collection",
         image: womensShoes,
         cta: "Shop Now",
-        link: "mens"
+        link: "womens"
     },
     {
         name: "Kids Collection",
         image: kidsShoes,
         cta: "Shop Now",
-        link: "mens"
+        link: "kids"
     }
 ]
 
