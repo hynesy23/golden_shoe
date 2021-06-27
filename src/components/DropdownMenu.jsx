@@ -1,15 +1,15 @@
 import React from 'react'
 
-export const DropdownMenu = () => {
+export const DropdownMenu = ({category}) => {
     return (
         <div className="dropdown-menu">
             <div className="dropdown-item">
-                Categories
+                Category: 
                 <ul>
-                    <li>Shoes</li>
-                    <li>Slippers</li>
-                    <li>Sandals</li>
-                    <li>Boots</li>
+                    <li>{category} Shoes</li>
+                    <li>{category} Slippers</li>
+                    <li>{category} Sandals</li>
+                    <li>{category} Boots</li>
                 </ul>
             </div>
             <div className="dropdown-item">

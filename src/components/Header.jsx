@@ -1,6 +1,7 @@
 import React from 'react'
 import AnnouncementBar from './AnnouncementBar'
 import { DropdownMenu } from './DropdownMenu'
+import showDropDownMenu from '../utils'
 
 import { BsBagFill, BsBag, BsFillHeartFill, BsHeart, BsSearch } from 'react-icons/bs';
 
@@ -13,19 +14,19 @@ export const Header = () => {
                 <div className="logo">GOLDEN SHOE</div>
                 <ul className="categories-container">
                     <li className="category-item">
-                        <div className="cat-header parent">Mens
-                            <DropdownMenu className="dropdown-item"/>
+                        <div className="cat-header parent" onClick={showDropDownMenu}>Mens
+                            <DropdownMenu className="dropdown-item" category={"Mens"}/>
                         </div>
                         {/* <DropdownMenu className="dropdown-item"/> */}
                     </li>
                     <li className="category-item">
-                        <div className="cat-header parent">Womens
-                            <DropdownMenu className="dropdown-item"/>
+                        <div className="cat-header parent" onClick={showDropDownMenu}>Womens
+                            <DropdownMenu className="dropdown-item" category={"Womens"}/>
                         </div>
                     </li>
                     <li className="category-item">
-                        <div className="cat-header parent">Kids
-                            <DropdownMenu className="dropdown-item"/>
+                        <div className="cat-header parent" onClick={showDropDownMenu}>Kids
+                            <DropdownMenu className="dropdown-item" category={"Kids"}/>
                         </div>
                     </li>
                     <li className="category-item">

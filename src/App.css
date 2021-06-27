@@ -87,7 +87,7 @@ img
 
 .categories-container li
 {
-    display: flex;
+    /* display: flex; */
     flex: 0 1 20%;
     justify-content: center;
     align-items: center;
@@ -113,6 +113,12 @@ img
 {
     font-weight: bold;
     cursor: pointer
+}
+
+.category-item .cat-header:hover .dropdown-menu
+{
+    font-weight: normal;
+    cursor: default
 }
 
 .search-container
@@ -175,6 +181,12 @@ img
 {
     display: flex;
     flex-direction: column;
+    padding-top: 10px
+}
+
+.dropdown-item li
+{
+    padding: 5px 0;
 }
 
 /* Homepage Styles */

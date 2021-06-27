@@ -2,6 +2,7 @@ import React from 'react'
 import mensShoes from '../images/mens-shoes.jpg';
 import womensShoes from '../images/womens-footwear.jpg';
 import kidsShoes from '../images/kids-shoes.jpg';
+import { HomepageCollectionCard } from './HomepageCollectionCard';
 
 const categories = [
     {
@@ -29,13 +30,7 @@ const CollectionList = () => {
         <div className="collection-container">
             {categories.map( category => {
                 return(
-                    <div className="collection-item" key={category.name}>
-                        <img src={category.image} alt={category.name} />
-                        <div className="textbox">
-                            <div className="name">{category.name}</div>
-                            <div className="cta">{category.cta}</div>
-                        </div>
-                    </div>
+                    <HomepageCollectionCard key={category.name} category={category}/>
                 )
             })}
         </div>
