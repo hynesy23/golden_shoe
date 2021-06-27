@@ -1,38 +1,94 @@
-.App {
-  text-align: center;
+:root
+{
+    --red: #ff323c
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul
+{
+    padding: 0;
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.flex
+{
+    display: flex;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.announement-bar
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    text-align: center;
+    background-color: var(--red);
+    color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar
+{
+    display: flex;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar ul
+{
+    display: flex;
+    list-style: none;
+}
+
+.navbar .logo
+{
+    flex: 0 1 15%;
+    border: 1px solid black;
+    color: var(--red);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.categories-container
+{
+    display: flex;
+    border: 1px solid black;
+    flex: 0 1 40%;
+    justify-content: space-between;
+    position: relative;
+    height: 50px;
+}
+
+.categories-container li
+{
+    display: flex;
+    flex: 0 1 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container
+{
+    flex: 0 1 20%;
+}
+
+.search-container input 
+{
+    width: 100%;
+}
+
+.icons-container
+{
+    flex: 0 1 10%;
+    border: 1px solid black;
+}
+
+.dropdown-menu
+{
+    position: absolute;
+    border: 1px solid black;
+    left: 0;
+    top: 50px;
+    background-color: #fff;
 }
