@@ -3,7 +3,7 @@ import React from 'react'
 export const DropdownMenu = () => {
     return (
         <div className="dropdown-menu">
-            <div>
+            <div className="dropdown-item">
                 Categories
                 <ul>
                     <li>Shoes</li>
@@ -12,7 +12,7 @@ export const DropdownMenu = () => {
                     <li>Boots</li>
                 </ul>
             </div>
-            <div>
+            <div className="dropdown-item">
                 Brands
                 <ul>
                     <li>Nike</li>

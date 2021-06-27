@@ -1,7 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import { handleDropDownNavMenu } from './utils'
+
 import { Header } from './components/Header';
-import * as utils from './utils'
+
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+
+// library.add(fab, faCheckSquare, faCoffee);
 
 function App() {
   return (
