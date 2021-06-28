@@ -26,6 +26,23 @@ export const showDropDownMenu = (event) => {
     }
 }
 
+export const handleSuccessModal = () => {
+    console.log('cliked')
+    const modal = document.getElementById( "success-modal" );
+    if( modal.dataset.open === "true" )
+    {
+        modal.dataset.open = "false";
+        modal.style.opacity = "0";
+        modal.style.zIndex = "-99";
+    }
+    else
+    {
+        modal.dataset.open = "true"
+        modal.style.zIndex = "9999";
+        modal.style.opacity = "0.9";
+    }
+}
+
 // const hideDropdownMenu = (event) => {
 //     // $(".dropdown-menu").css( "opacity", "0" );
 //     const item = event.currentTarget;

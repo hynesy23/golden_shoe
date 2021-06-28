@@ -7,7 +7,7 @@ export const HomepageCollectionCard = ({ category}) => {
             <img src={category.image} alt={category.name} />
             <div className="textbox">
                 <div className="name">{category.name}</div>
-                <Link className="cta" to={`${category.link}`}>
+                <Link className="cta" to={`collections/${category.link}`}>
                     <div>{category.cta}</div>
                 </Link>
             </div>

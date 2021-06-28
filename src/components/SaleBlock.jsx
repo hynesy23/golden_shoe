@@ -1,6 +1,6 @@
 import {React, Component} from "react";
 
-import saleImage from '../images/sale.jpeg'
+import saleImage from '../images/hp-hero-summersale.jpg'
 
 class SaleBlock extends Component {
   render() {

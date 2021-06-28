@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 
+import { Link, useLocation } from 'react-router-dom';
+
 import shoeImage from '../images/shoe.jpg'
 
 // import { handleAddToWishlist } from '../utils'
@@ -10,6 +12,9 @@ import { BsBagFill, BsBag, BsFillHeartFill, BsHeart, BsSearch } from 'react-icon
 
 export const CollectionCard = ({ shoe }) => {
     const [notInWishList, setnotInWishList] = useState(true)
+
+    const location = useLocation();
+    const category = location.pathname.split('/')[1];
 
     const handleAddToWishlist = (element) => {
         const { target } = element;
@@ -43,7 +48,7 @@ export const CollectionCard = ({ shoe }) => {
             <div className="header">{shoe.name}</div>
             <div>£{shoe.price.toFixed(2)}</div>
             <div>
-                <div>VIEW</div>
+                <Link to={`/products/${shoe.name}`}><div>VIEW</div></Link>
                 <div>ADD TO CART</div>
             </div>
         </div>

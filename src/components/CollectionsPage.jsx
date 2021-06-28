@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import getAllShoes from '../api';
+import {getAllShoes} from '../api';
 
 import { CollectionCard } from './CollectionCard';
 
@@ -18,7 +18,7 @@ export const CollectionsPage = () => {
     const location = useLocation();
     const category = location.pathname.split('/')[1];
     return (
-        <div className="homepage-container">
+        <div className="page-container">
             <div className="card-container">
                 <p className="card-header">{category} Collection</p>
                     <div className="card-container-inner">

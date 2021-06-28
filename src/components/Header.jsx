@@ -1,36 +1,18 @@
-import { React, useState, useEffect } from 'react'
+import { React, useState } from 'react'
 
 import { Link } from 'react-router-dom';
 
 import AnnouncementBar from './AnnouncementBar'
 import { DropdownMenu } from './DropdownMenu'
-import { Basket } from './Basket';
 import {showDropDownMenu} from '../utils'
 
 import { BsBagFill, BsBag, BsFillHeartFill, BsHeart, BsSearch } from 'react-icons/bs';
 
-export const Header = () => {
+export const Header = ({handleBasketVisibility, itemCount}) => {
 
-    const [showBasket, setshowBasket] = useState(false)
-
-    const handleBasketVisibility = () => {
-        console.log('basket clicked', showBasket)
-        const basket = document.querySelector( ".basket-container" );
-        if( showBasket )
-        {
-            setshowBasket( false )
-            basket.style.right = "-520px";
-        }
-        else
-        {
-            setshowBasket( true )
-            basket.style.right = "0";
-        }
-    }
     return (
         <header className="header-container">
             <div>
-            <Basket handleBasketVisibility={handleBasketVisibility}/>
             <AnnouncementBar />
             <nav className="navbar">
                 <Link to="/"><div className="logo">GOLDEN SHOE</div></Link>
@@ -52,10 +34,12 @@ export const Header = () => {
                         </div>
                     </li>
                     <li className="category-item">
-                        <p className="cat-header">Sale</p>
+                    <div className="cat-header parent" onClick={showDropDownMenu}>All
+                        <DropdownMenu className="dropdown-item" category={"All"}/>
+                    </div>
                     </li>
                     <li className="category-item">
-                    <p className="cat-header">About</p>
+                        <p className="cat-header">Sale</p>
                     </li>
                 </ul>
                 <div className="search-container">
@@ -66,7 +50,10 @@ export const Header = () => {
                     {/* <li><BsFillHeartFill /></li> */}
                     <li><BsHeart /></li>
                     {/* <li><BsBagFill /></li> */}
-                    <li onClick={handleBasketVisibility}><BsBag /></li>
+                    <li onClick={handleBasketVisibility}>
+                        <BsBag />
+                    </li>
+                        {(itemCount > 0) && <div className="item-count">{itemCount}</div>}
                 </ul>
             </nav>
             </div>
