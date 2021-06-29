@@ -33,6 +33,7 @@ export const handleSuccessModal = () => {
         modal.dataset.open = "false";
         modal.style.opacity = "0";
         modal.style.zIndex = "-99";
+        window.location.reload();
     }
     else
     {
@@ -40,6 +41,7 @@ export const handleSuccessModal = () => {
         modal.style.zIndex = "9999";
         modal.style.opacity = "0.9";
     }
+
 }
 
 // const hideDropdownMenu = (event) => {

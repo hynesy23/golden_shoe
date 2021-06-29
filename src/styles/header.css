@@ -123,9 +123,10 @@
     display: flex;
     justify-content: flex-end;
     font-size: 22px;
+    position: relative;
 }
 
-.header-container .icons-container .item-count
+.header-container .icons-container .item-count, .mob-navbar .icons-container .item-count
 {
     border-radius: 50%;
     height: 15px;
@@ -218,6 +219,7 @@
     display: flex;
     justify-content: flex-end;
     font-size: 22px;
+    position: relative;
 }
 
 .mob-navbar-inner .icons-container li:nth-child(1)

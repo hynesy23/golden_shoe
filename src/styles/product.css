@@ -60,7 +60,25 @@
 .klarna
 {
     width: 350px;
-    padding-top:30px;
+    padding-top: 15px;
+}
+
+.social-icons
+{
+    display: flex;
+    font-size: 25px;
+    padding-top: 10px;
+    color: var(--red);
+}
+
+.social-icons div
+{
+    margin-right: 20px;
+}
+
+.social-icons div:hover
+{
+    cursor: pointer;
 }
 
 .size-container
@@ -166,7 +184,7 @@
 
 .also-like-container-inner
 {
-    height: 280px;
+    height: 400px;
 }
 
 .also-like-container-inner div
@@ -177,7 +195,7 @@
 .product-info-container-nav
 {
     display: flex;
-    width: 40%;
+    width: 500px;
     justify-content: space-between;
     padding-bottom: 10px;
     transition: transform 500ms
@@ -217,6 +235,46 @@
 }
 
 
+@media only screen and ( max-width: 1500px )
+{
+    .also-like-container-inner
+    {
+        height: 350px;
+    }
+}
+
+@media only screen and ( max-width: 1400px )
+{
+    .also-like-container-inner
+    {
+        height: 335px;
+    }
+}
+
+@media only screen and ( max-width: 1300px )
+{
+    .also-like-container-inner
+    {
+        height: 300px;
+    }
+}
+
+@media only screen and ( max-width: 1100px )
+{
+    .also-like-container-inner
+    {
+        height: 260px;
+    }
+}
+
+@media only screen and ( max-width: 1000px )
+{
+    .also-like-container-inner
+    {
+        height: 220px;
+    }
+}
+
 @media only screen and ( max-width: 767px )
 {
     .page-container .top-half
@@ -226,8 +284,9 @@
     .page-container .top-half .text-container
     {
         text-align: center;
+        padding-left: 0;
     }
-    .page-container .top-half .text-container .icons-container, .page-container .top-half .text-container .cta-container
+    .page-container .top-half .text-container .icons-container, .page-container .top-half .text-container .cta-container, .social-icons
     {
         justify-content: center;
     }
@@ -238,5 +297,30 @@
     .product-info-container-nav
     {
         width: 70%;
+    }
+}
+
+@media only screen and ( max-width: 500px )
+{
+    .fit-finder, .klarna
+    {
+        width: 200px;
+    }
+    .product-info-container-nav
+    {
+        width: auto;
+        font-size: 12px;
+    }
+    .product-info-container .tab-container
+    {
+        font-size: 14px;
+    }
+}
+
+@media only screen and ( max-width: 400px )
+{
+    .also-like-container-inner
+    {
+        height: 80px;
     }
 }

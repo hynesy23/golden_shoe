@@ -1,4 +1,4 @@
-import { React } from 'react'
+import { React, useState, useEffect } from 'react'
 
 import { Link } from 'react-router-dom';
 
@@ -10,7 +10,20 @@ import {showDropDownMenu} from '../utils'
 
 import { BsBag, BsHeart, BsSearch } from 'react-icons/bs';
 
-export const Header = ({handleBasketVisibility, itemCount}) => {
+export const Header = ({handleBasketVisibility }) => {
+
+    const [itemCount, setItemCount] = useState(0)
+
+    useEffect(() => {
+        const itemCount = getItemCount();
+        setItemCount(itemCount)
+    }, [])
+
+    const getItemCount = () => {
+        const basket = JSON.parse( localStorage.getItem( 'basket' ) );
+        const itemCount = basket.length;
+        return itemCount;
+    }
 
     return (
         <header className="header-container">
@@ -23,7 +36,6 @@ export const Header = ({handleBasketVisibility, itemCount}) => {
                         <div className="cat-header parent" onClick={showDropDownMenu}>Mens
                             <DropdownMenu className="dropdown-item" category={"Mens"}/>
                         </div>
-                        {/* <DropdownMenu className="dropdown-item"/> */}
                     </li>
                     <li className="category-item">
                         <div className="cat-header parent" onClick={showDropDownMenu}>Womens
@@ -49,9 +61,7 @@ export const Header = ({handleBasketVisibility, itemCount}) => {
                     <input type="text" name="search" placeholder="Search"/>
                 </div>
                 <ul className="icons-container">
-                    {/* <li><BsFillHeartFill /></li> */}
                     <li><BsHeart /></li>
-                    {/* <li><BsBagFill /></li> */}
                     <li onClick={handleBasketVisibility}>
                         <BsBag />
                     </li>

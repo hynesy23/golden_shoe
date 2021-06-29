@@ -2,6 +2,8 @@ import React from 'react';
 
 import '../styles/footer.css'
 
+import paymentMethods from '../images/payment_methods.PNG'
+
 export const Footer = () => {
     return (
         <div className="footer-container">
@@ -35,7 +37,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="payment-icons">[ PAYMENT METHODS GO HERE: VISA/MASTERCARD/AMEX ETC ETC ]</div>
+            <div className="payment-icons"><img src={paymentMethods} alt="list of payment methods" /></div>
         </div>
     )
 }

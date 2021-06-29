@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React, useState, useEffect } from 'react'
 
 import { Link } from 'react-router-dom';
 
@@ -10,9 +10,21 @@ import { BsBag, BsHeart, BsSearch } from 'react-icons/bs';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MobNavMenu } from './MobNavMenu';
 
-export const HeaderMob = ({handleBasketVisibility, itemCount}) => {
+export const HeaderMob = ({ handleBasketVisibility }) => {
 
     const [showNav, setShowNav] = useState(false)
+    const [itemCount, setItemCount] = useState(0)
+
+    useEffect(() => {
+        const itemCount = getItemCount();
+        setItemCount(itemCount)
+    }, [])
+
+    const getItemCount = () => {
+        const basket = JSON.parse( localStorage.getItem( 'basket' ) );
+        const itemCount = basket.length;
+        return itemCount;
+    }
 
     const showNavMenu = () => {
         const mobNav = document.querySelector( ".mob-nav" );

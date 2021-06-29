@@ -4,6 +4,10 @@ import { AiFillStar } from 'react-icons/ai';
 
 import '../styles/product.css'
 
+import { GrFacebook } from 'react-icons/gr'
+import { ImWhatsapp } from 'react-icons/im'
+import { SiInstagram } from 'react-icons/si'
+
 import {handleSuccessModal} from '../utils/index'
 
 import { getSingleShoe } from '../api';
@@ -90,10 +94,15 @@ export const ProductPage = ({addToBasket}) => {
                         <div></div>
                         <div className="cta-container">
                             <div className="button" onClick={handleAddToBasket}>Add to Basket</div>
-                            <div className="button">Collect in Store</div>
+                            {/* <div className="button">Collect in Store</div> */}
                         </div>
                         <div className="klarna">
                             <img src={klarnaImage} alt="" />
+                        </div>
+                        <div className="social-icons">
+                            <div><GrFacebook /></div>
+                            <div><ImWhatsapp /></div>
+                            <div><SiInstagram /></div>
                         </div>
                     </div>
                 </div>

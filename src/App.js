@@ -13,10 +13,12 @@ import { CollectionsPage } from './components/CollectionsPage';
 import { ProductPage } from './components/ProductPage';
 import { Basket } from './components/Basket';
 import { CheckoutPage } from './components/CheckoutPage';
+import { ChatWidget } from './components/ChatWidget';
 
 export const App = () => {
   const [basket, setBasket] = useState([]);
   const [showBasket, setshowBasket] = useState(false)
+  const [itemCount, setItemCount] = useState(0)
 
     const handleBasketVisibility = () => {
         // console.log('basket clicked', showBasket)
@@ -54,12 +56,13 @@ export const App = () => {
     {
       localStorage.setItem('basket', JSON.stringify(basket));
     }
+    setItemCount( itemCount + 1 )
   }
 
   return (
     <div className="App">
-      <Header handleBasketVisibility={handleBasketVisibility} itemCount={basket.length}/>
-      <HeaderMob handleBasketVisibility={handleBasketVisibility} itemCount={basket.length}/>
+      <Header handleBasketVisibility={handleBasketVisibility} itemCount={itemCount}/>
+      <HeaderMob handleBasketVisibility={handleBasketVisibility} itemCount={itemCount}/>
       <Basket handleBasketVisibility={handleBasketVisibility} basket={basket}/>
       <Switch>
         {/* <Homepage /> */}
@@ -70,6 +73,7 @@ export const App = () => {
         <Route path="/products/:productName" render={(props) => <ProductPage {...props} addToBasket={addToBasket} />}/>
         <Route path="/checkout" component={CheckoutPage} />
       </Switch>
+      <ChatWidget />
       <Footer />
     </div>
   );

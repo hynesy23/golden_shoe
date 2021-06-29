@@ -1,13 +1,24 @@
-import React from 'react';
+import {React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import '../styles/basket.css'
 
 import {RiCloseFill} from 'react-icons/ri';
 
-import shoeImage from '../images/shoe.jpg'
+import { BasketItem } from './BasketItem';
 
-export const Basket = ({handleBasketVisibility, basket}) => {
+export const Basket = ({ handleBasketVisibility }) => {
+
+    const [basket, setBasket] = useState([])
+
+    useEffect(() => {
+        const basket = JSON.parse( localStorage.getItem( 'basket' ) );
+        if( basket )
+        {
+            setBasket(basket);
+        }
+    }, [])
+
     return (
         <>
         <div className="overlay"></div>
@@ -20,16 +31,9 @@ export const Basket = ({handleBasketVisibility, basket}) => {
                     <p className="header">Your Basket:</p>
                     {basket.length ? 
                     <div>
-                        {basket.map( (item, i) => {
+                        {basket && basket.map( item => {
                             return (
-                                <div key={i} className="basket-item">
-                                    <div className="image-container"><img src={shoeImage} alt="" /></div>
-                                    <div className="text-container">
-                                        <div className="header">{item.name}</div>
-                                        <div className="item">£{item.price.toFixed(2)}</div>
-                                        <div className="item">SIZE {item.size}</div>
-                                    </div>
-                                </div>
+                                <BasketItem key={item.id} item={item} basket={basket}/>
                             )
                         })}
                         <Link to="/checkout" onClick={handleBasketVisibility}><div className="button">PROCEED TO CHECKOUT</div></Link>

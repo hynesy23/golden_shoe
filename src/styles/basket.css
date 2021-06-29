@@ -70,6 +70,21 @@
 .basket-container-inner .basket-item .text-container
 {
     padding-left: 20px;
+    position: relative;
+}
+
+.basket-container-inner .basket-item .text-container .bin
+{
+    position: absolute;
+    font-size: 20px;
+    color: var(--red);
+    bottom: 20px;
+    right: 20px;
+}
+
+.basket-container-inner .basket-item .text-container .bin:hover
+{
+    cursor: pointer;
 }
 
 .basket-container-inner .basket-item .text-container .header
