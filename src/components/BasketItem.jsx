@@ -8,7 +8,6 @@ import { RiDeleteBin6Line } from 'react-icons/ri'
 export const BasketItem = ({ item, basket }) => {
 
     const removeFromBasket = (e) => {
-        console.log(e.target.closest(".basket-item"), 'current target')
         const name = e.target.closest(".basket-item").dataset.name;
 
         const updatedBasket = basket.filter( item => {

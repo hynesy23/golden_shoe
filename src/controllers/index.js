@@ -2,6 +2,7 @@ const Product = require('../models/Products');
 const { Op } = require("sequelize");
 
 const getAllShoes = async (req, res) => {
+    console.log('getAllShoes called')
     const { category } = req.params
     try 
     {
@@ -37,17 +38,13 @@ const getAllShoes = async (req, res) => {
 }
 
 const getSingleShoe = async (req, res) => {
-    console.log('getAllShoes() in server hit');
-    console.log(req.params);
     const { shoeId: id } = req.params;
-    console.log(id, 'AS ID')
     try 
     {
         const shoeRaw = await Product.findByPk( id );
         const shoe = shoeRaw.get({ plain: true });
         shoe.sizes = shoe.sizes.split(",")
 
-        console.log(shoe, 'shoe from DB')
         res.status(200).json(shoe)
     } 
     catch(error) 

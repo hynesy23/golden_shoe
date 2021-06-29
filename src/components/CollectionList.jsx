@@ -2,9 +2,18 @@ import React from 'react'
 import mensShoes from '../images/mens-shoes.jpg';
 import womensShoes from '../images/womens-footwear.jpg';
 import kidsShoes from '../images/kids-shoes.jpg';
+import allShoes from '../images/all_shoes.jpg';
 import { HomepageCollectionCard } from './HomepageCollectionCard';
 
+import { Link } from 'react-router-dom';
+
 const categories = [
+    {
+        name: "Shop All",
+        image: allShoes,
+        cta: "Shop Now",
+        link: "all"
+    },
     {
         name: "Men's Collection",
         image: mensShoes,
@@ -27,12 +36,24 @@ const categories = [
 
 const CollectionList = () => {
     return (
-        <div className="collection-container">
-            {categories.map( category => {
-                return(
-                    <HomepageCollectionCard key={category.name} category={category}/>
-                )
-            })}
+        <div>
+            {categories && 
+                <div className="first-collection">
+                    <img src={categories[0].image} alt={categories[0].name} />
+            <div className="textbox">
+                <div className="name">{categories[0].name}</div>
+                <Link className="cta" to={`collections/${categories[0].link}`}>
+                    <div>{categories[0].cta}</div>
+                </Link>
+            </div>
+                </div>}
+            <div className="collection-container">
+                {categories.slice( 1 ).map( (category, i) => {
+                    return(
+                        <HomepageCollectionCard key={category.name} category={category} index={i}/>
+                    )
+                })}
+            </div>
         </div>
     )
 }

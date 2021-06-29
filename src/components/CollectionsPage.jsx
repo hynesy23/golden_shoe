@@ -46,14 +46,12 @@ export const CollectionsPage = () => {
         const target = e.target;
         const sortBy = target.dataset.sort;
 
-        console.log(sortBy)
         if( sortBy === "highest" )
         {
             const sortedShoes = [ ...shoes ].sort( (a, b) => {
                 return a.price - b.price
             })
             setShoes( sortedShoes )
-            console.log(shoes, 'shoes')
         }
         else
         {

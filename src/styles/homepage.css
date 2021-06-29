@@ -37,7 +37,21 @@
     z-index: 10;
 }
 
-.collection-item .textbox
+.first-collection
+{
+    width: 100%;
+    position: relative;
+    height: 500px;
+    margin-bottom: 20px
+}
+
+.first-collection .name
+{
+    font-size: 45px;
+}
+
+
+.collection-item .textbox, .first-collection .textbox
 {
     display: flex;
     flex-direction: column;
@@ -53,6 +67,12 @@
     padding: 20px 0;
 }
 
+.first-collection .textbox
+{
+    padding: 80px 0 40px !important;
+    height: 150px;
+}
+
 .collection-item .textbox .name 
 {
     font-size: 30px;
@@ -60,7 +80,7 @@
     margin: 0 auto;
 }
 
-.collection-item .textbox .cta
+.collection-item .textbox .cta, .first-collection .textbox .cta
 {
     margin: 0 auto;
     margin-top: auto;
@@ -76,7 +96,7 @@
   text-decoration: none;
 }
 
-.collection-item .textbox .cta:hover
+.collection-item .textbox .cta:hover, .first-collection .textbox .cta:hover
 {
   border: 1px solid var(--red);
   background-color: #fff;

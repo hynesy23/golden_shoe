@@ -21,7 +21,6 @@ export const App = () => {
   const [itemCount, setItemCount] = useState(0)
 
     const handleBasketVisibility = () => {
-        // console.log('basket clicked', showBasket)
         const basket = document.querySelector( ".basket-container" );
         const overlay = document.querySelector( ".overlay" );
         if( showBasket )
@@ -48,7 +47,6 @@ export const App = () => {
     let lSBasket = JSON.parse(localStorage.getItem('basket'))
     if( lSBasket )
     {
-      console.log(lSBasket)
       lSBasket.push(shoe);
       localStorage.setItem('basket', JSON.stringify(lSBasket));
     }
