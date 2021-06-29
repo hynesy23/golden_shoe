@@ -1,7 +1,9 @@
 const shoeData = require('../db/products.json');
+const axios = require('axios');
 
-export const getAllShoes = () => {
-    return shoeData;
+export const getAllShoes = async () => {
+    // return shoeData;
+    const response = await axios.get("http://localhost:8080");
 }
 
 export const getSingleShoe = (shoeName) => {
