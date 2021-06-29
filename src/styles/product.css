@@ -161,11 +161,17 @@
 .also-like-container p 
 {
     padding-bottom: 20px;
+    font-size: 30px;
 }
 
-.also-like-container-inner .item
+.also-like-container-inner
 {
-    margin: 0 20px;
+    height: 280px;
+}
+
+.also-like-container-inner div
+{
+    margin: 0 5px;
 }
 
 .product-info-container-nav
@@ -208,4 +214,29 @@
 .product-info-container .active
 {
     display: block !important;
+}
+
+
+@media only screen and ( max-width: 767px )
+{
+    .page-container .top-half
+    {
+        flex-direction: column;
+    }
+    .page-container .top-half .text-container
+    {
+        text-align: center;
+    }
+    .page-container .top-half .text-container .icons-container, .page-container .top-half .text-container .cta-container
+    {
+        justify-content: center;
+    }
+    .fit-finder, .klarna
+    {
+        margin: auto;
+    }
+    .product-info-container-nav
+    {
+        width: 70%;
+    }
 }

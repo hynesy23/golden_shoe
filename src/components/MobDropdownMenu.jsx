@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-export const DropdownMenu = ({category}) => {
+export const MobDropdownMenu = ({category}) => {
     return (
         <div className="dropdown-menu">
             <div className="dropdown-item">

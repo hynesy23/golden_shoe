@@ -1,13 +1,18 @@
 const express = require('express');
 const app = express();
+const cors = require("cors");
 
-const sequelize = require('./config/connection');
+// const sequelize = require('./config/connection');
 
-const { getAllShoes } = require('../src/controllers/index')
+const PORT = process.env.PORT || 8080;
 
-const PORT = process.env.PORT || 8080
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/", getAllShoes);
+const routes = require('./routes')
+
+app.use("/", routes);
 
 app.listen(PORT, () => {
     console.log(`listening on http://localhost:${PORT}`)

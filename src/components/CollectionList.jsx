@@ -12,10 +12,10 @@ const categories = [
         link: "mens"
     },
     {
-        name: "Women's Collection",
+        name: "Ladies Collection",
         image: womensShoes,
         cta: "Shop Now",
-        link: "womens"
+        link: "ladies"
     },
     {
         name: "Kids Collection",

@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import { React } from 'react'
 
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ import AnnouncementBar from './AnnouncementBar'
 import { DropdownMenu } from './DropdownMenu'
 import {showDropDownMenu} from '../utils'
 
-import { BsBagFill, BsBag, BsFillHeartFill, BsHeart, BsSearch } from 'react-icons/bs';
+import { BsBag, BsHeart, BsSearch } from 'react-icons/bs';
 
 export const Header = ({handleBasketVisibility, itemCount}) => {
 

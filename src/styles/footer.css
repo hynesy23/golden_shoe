@@ -1,6 +1,6 @@
 /* Footer styles */
 
-.footer-container
+.footer-container-inner
 {
     display: flex;
     background-color: #323232;
@@ -64,4 +64,38 @@
     background-color: #fff;
     color: var(--red);
     border: 1px solid var(--red);
+}
+
+.footer-container .payment-icons
+{
+    background-color: #323232;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+@media only screen and ( max-width: 900px )
+{
+    .tables-container
+    {
+        flex: 0 1 60%;
+    }
+    .newsletter-container
+    {
+        flex: 0 1 40%;
+    }
+}
+
+@media only screen and ( max-width: 767px )
+{
+    .footer-container-inner
+    {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .newsletter-container
+    {
+        padding-top: 30px;
+    }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const HomepageCollectionCard = ({ category}) => {
+export const HomepageCollectionCard = ({ category }) => {
     return (
         <div className="collection-item" key={category.name}>
             <img src={category.image} alt={category.name} />

@@ -26,8 +26,7 @@ export const ProductPage = ({addToBasket}) => {
 
     useEffect(() => {
         const fetchSingleShoe = async() => {
-            console.log('useEffect')
-            const shoe = getSingleShoe( shoeId )
+            const shoe = await getSingleShoe( shoeId )
             setShoe( shoe )
             setSizes( shoe.sizes )
         }
@@ -37,7 +36,6 @@ export const ProductPage = ({addToBasket}) => {
     
     const getSize = (e) => {
         const size = e.target.value;
-        console.log(size, 'size log');
         setSize( size );
         setSizeError("");
     }
@@ -47,18 +45,16 @@ export const ProductPage = ({addToBasket}) => {
         {
             let newShoe = { ...shoe }
             newShoe.size = size;
-            console.log(newShoe, 'newShoe')
             addToBasket( newShoe );
             handleSuccessModal();
         }
         else
         {
-            console.log('Please select a size')
             setSizeError("Please select a size")
 
         }
     }
-    console.log(shoe, 'the shoe')
+    
     if( shoe )
     {
         return (
@@ -70,7 +66,7 @@ export const ProductPage = ({addToBasket}) => {
                     </div>
                     <div className="text-container">
                         <div className="header">{shoe.name}</div>
-                        <div className="price">£{shoe.price.toFixed(2)}</div>
+                        <div className="price">£{shoe.price}</div>
                         <div className="icons-container">
                             <AiFillStar className="icon"/>
                             <AiFillStar className="icon"/>

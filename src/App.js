@@ -1,9 +1,10 @@
-import {React, useState, useEffect } from 'react';
+import {React, useState } from 'react';
 
 import './App.css';
 import { handleDropDownNavMenu } from './utils'
 
 import { Header } from './components/Header';
+import { HeaderMob } from './components/HeaderMob';
 import { Homepage } from './components/Homepage';
 import { Footer } from './components/Footer';
 
@@ -18,7 +19,7 @@ export const App = () => {
   const [showBasket, setshowBasket] = useState(false)
 
     const handleBasketVisibility = () => {
-        console.log('basket clicked', showBasket)
+        // console.log('basket clicked', showBasket)
         const basket = document.querySelector( ".basket-container" );
         const overlay = document.querySelector( ".overlay" );
         if( showBasket )
@@ -26,19 +27,20 @@ export const App = () => {
             setshowBasket( false )
             overlay.style.display = "none";
             basket.style.right = "-520px";
+            document.querySelector( "body" ).classList.remove( "disable-scroll" );
         }
         else
         {
             setshowBasket( true )
             overlay.style.display = "block";
             basket.style.right = "0";
+            document.querySelector( "body" ).classList.add( "disable-scroll" );
         }
     }
 
   // let newBasket = [];
 
   const addToBasket = (shoe) => {
-    console.log(shoe, 'SHOEEE')
     basket.push(shoe);
     setBasket( basket );
     let lSBasket = JSON.parse(localStorage.getItem('basket'))
@@ -57,6 +59,7 @@ export const App = () => {
   return (
     <div className="App">
       <Header handleBasketVisibility={handleBasketVisibility} itemCount={basket.length}/>
+      <HeaderMob handleBasketVisibility={handleBasketVisibility} itemCount={basket.length}/>
       <Basket handleBasketVisibility={handleBasketVisibility} basket={basket}/>
       <Switch>
         {/* <Homepage /> */}

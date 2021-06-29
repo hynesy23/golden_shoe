@@ -1,18 +1,16 @@
-const shoeData = require('../db/products.json');
+// const shoeData = require('../db/products.json');
 const axios = require('axios');
 
-export const getAllShoes = async () => {
-    // return shoeData;
-    const response = await axios.get("http://localhost:8080");
+export const getAllShoes = async (category) => {
+    const { data } = await axios.get(`http://localhost:8080/collections/${category}`);
+    return data;
 }
 
-export const getSingleShoe = (shoeName) => {
-    const shoe = shoeData.find( shoe => shoe.name === shoeName );
-    console.log(shoe, 'SHOE???')
-    console.log(shoe.sizes, 'sizes')
-    if( shoe )
-    {
-        shoe.sizes = shoe.sizes.split(",");
-        return shoe;
-    }
+export const getSingleShoe = async (shoeId) => {
+    console.log(shoeId, 'shoe ID')
+    // return shoeData;
+    const { data } = await axios.get(`http://localhost:8080/products/${shoeId}`);
+    console.log(data, 'response log');
+    return data;
+    // return data;
 }

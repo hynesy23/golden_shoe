@@ -13,7 +13,7 @@
 
 .basket-container
 {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: -520px;
     width: 450px;
@@ -102,4 +102,12 @@
     background-color: #fff;
     color: var(--red);
     cursor: pointer;
+}
+
+@media only screen and ( max-width: 500px )
+{
+    .basket-container
+    {
+        width: 90%;
+    }
 }

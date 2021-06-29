@@ -4,7 +4,6 @@ export const ProductInfo = ({description}) => {
 
     const showTab = (e) => {
         const target = e.target;
-        console.log(target)
 
         const navs = document.querySelectorAll( ".nav" );
 
@@ -37,8 +36,8 @@ export const ProductInfo = ({description}) => {
                 <div onClick={showTab} className="nav" data-name="reviews">Reviews</div>
             </div>
             <div className="tab-container active" data-name="prod-desc">{description}</div>
-            <div className="tab-container" data-name="delret"></div>
-            <div className="tab-container" data-name="reviews"></div>
+            <div className="tab-container" data-name="delret">No need to call! You can find all the info you need about our Delivery & Returns right here :D</div>
+            <div className="tab-container" data-name="reviews">Please Login or Sign Up to leave a review</div>
         </div>
     )
 }

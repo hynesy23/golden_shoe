@@ -27,7 +27,6 @@ export const showDropDownMenu = (event) => {
 }
 
 export const handleSuccessModal = () => {
-    console.log('cliked')
     const modal = document.getElementById( "success-modal" );
     if( modal.dataset.open === "true" )
     {

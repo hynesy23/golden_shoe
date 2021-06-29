@@ -23,6 +23,7 @@
 .card-item .header
 {
     font-size: 22px;
+    height: 60px;
 }
 
 .card-item .image
@@ -47,4 +48,53 @@
 .card-item .image .icon:hover
 {
     cursor: pointer;
+}
+
+.card-item .cta-container
+{
+    /* display: flex;
+    justify-content: space-between; */
+}
+
+.card-item .cta-container a
+{
+    display: block;
+    background-color: var(--red);
+    border: 1px solid var(--red);
+    color: #fff;
+    padding: 10px;
+    flex: 0 1 48%;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.card-item .cta-container a:hover
+{
+    background-color: #fff;
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+@media only screen and ( max-width: 1100px )
+{
+    .card-container-inner
+    {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and ( max-width: 700px )
+{
+    .card-container-inner
+    {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and ( max-width: 450px )
+{
+    .card-container-inner
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
