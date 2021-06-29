@@ -16,14 +16,14 @@ Product.init(
             allowNull: false,
           },
           price: {
-              type: DataTypes.INTEGER,
+              type: DataTypes.DECIMAL,
               allowNull: false
           },
           description: {
-              type: DataTypes.STRING,
+              type: DataTypes.STRING(500),
               allowNull: false
           },
-          quantity: {
+          stock: {
               type: DataTypes.INTEGER,
               allowNull: false
           },
@@ -32,8 +32,24 @@ Product.init(
               allowNull: false
           },
           brand: {
-              type: DataTypes.INTEGER,
+              type: DataTypes.STRING,
               allowNull: false
+          },
+          sizes: {
+              type: DataTypes.STRING,
+              allowNull: false
+          },
+          sale: {
+              type: DataTypes.BOOLEAN,
+              allowNull: true
           }
+    },
+    {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'shoe',
     }
 )
+
+module.exports = Product;
