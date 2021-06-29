@@ -1,10 +1,41 @@
 /* Cards Styling */
 
+.card-container
+{
+    display: flex;
+}
+
+.card-container .filter-container
+{
+    flex: 0 1 15%;
+    margin-right: 30px;
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.filter-container-inner
+{
+    padding: 10px 0;
+}
+
+.filter-container-inner .item
+{
+    height: 0;
+    overflow: hidden;
+}
+
+.filter-container-inner .filters li:hover, .filter-container-inner .sorts:hover
+{
+    cursor: pointer
+}
+
 .card-container-inner
 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1em;
+    flex: 0 1 80%;
 }
 
 .card-header

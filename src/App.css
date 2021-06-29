@@ -32,6 +32,11 @@ a
     color: inherit;
 }
 
+h2
+{
+    margin: 0;
+}
+
 .disable-scroll
 {
     overflow: hidden;
@@ -59,6 +64,46 @@ a
     cursor: pointer;
 }
 
+.total
+{
+    float: right;
+    font-size: 30px
+}
+
+.delivery-form
+{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    padding-top: 30px;
+}
+
+.delivery-form input
+{
+    margin: 10px 0;
+    height: 35px;
+}
+
+.delivery-form .button
+{
+    width: 200px;
+    border: 1px solid var(--red);
+    background-color: var(--red);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.delivery-form .button:hover
+{
+    border: 1px solid var(--red);
+    background-color: #fff;
+    color: var(--red);
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 767px )
 {
     .chat-widget
@@ -68,5 +113,9 @@ a
         font-size: 25px;
         bottom: 10px;
         right: 10px;
+    }
+    .delivery-form
+    {
+        width: 90%;
     }
 }

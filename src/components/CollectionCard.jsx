@@ -28,6 +28,7 @@ export const CollectionCard = ({ shoe }) => {
                 <BsFillHeartFill className="icon full-heart" onClick={handleAddToWishlist} data-remove="true"/>
             </div>
             <div className="header">{shoe.name}</div>
+            <span>{shoe.brand}</span>
             <div>£{shoe.price}</div>
             <div className="cta-container">
                 <Link to={`/products/${shoe.id}`}><div>VIEW</div></Link>

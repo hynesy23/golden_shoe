@@ -7,15 +7,24 @@ import {RiCloseFill} from 'react-icons/ri';
 
 import { BasketItem } from './BasketItem';
 
+import { formatPrices } from '../utils'
+
 export const Basket = ({ handleBasketVisibility }) => {
 
     const [basket, setBasket] = useState([])
+    const [subTotal, setSubTotal] = useState(0)
 
     useEffect(() => {
         const basket = JSON.parse( localStorage.getItem( 'basket' ) );
         if( basket )
         {
             setBasket(basket);
+            let subTotal = 0;
+            const formattedItem = formatPrices( basket );
+            formattedItem.forEach( item => {
+                subTotal += item.price;
+            })
+            setSubTotal( subTotal );
         }
     }, [])
 
@@ -36,6 +45,10 @@ export const Basket = ({ handleBasketVisibility }) => {
                                 <BasketItem key={item.id} item={item} basket={basket}/>
                             )
                         })}
+                        <div className="sub-total">Subtotal: £{subTotal}</div>
+                        <div className="delivery-text">
+                            ** FREE DELIVERY ON ORDERS OVER £50. £5 NEXT WORKING DAY DELIVERY. ALL OTHER DELIVERIES £7.50
+                        </div>
                         <Link to="/checkout" onClick={handleBasketVisibility}><div className="button">PROCEED TO CHECKOUT</div></Link>
                     </div>
                     : <p>Your basket is currently empty</p>}

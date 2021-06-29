@@ -24,7 +24,7 @@ export const Footer = () => {
                         <ul className="table-item">
                             <li>About Us</li>
                             <li>Jobs</li>
-                            <li></li>
+                            <li>Contact Us</li>
                         </ul>
                     </div>
                     <div></div>

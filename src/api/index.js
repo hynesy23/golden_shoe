@@ -1,9 +1,11 @@
 // const shoeData = require('../db/products.json');
+import { formatPrices } from '../utils'
 const axios = require('axios');
 
 export const getAllShoes = async (category) => {
     const { data } = await axios.get(`http://localhost:8080/collections/${category}`);
-    return data;
+    const formattedShoes = formatPrices( data )
+    return formattedShoes;
 }
 
 export const getSingleShoe = async (shoeId) => {

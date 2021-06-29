@@ -21,6 +21,7 @@
     background-color: #fff;
     z-index: 9999;
     transition: right 500ms;
+    overflow: scroll;
     /* display: none; */
 }
 
@@ -28,6 +29,18 @@
 {
     position: relative;
     padding: 50px 20px 20px 50px;
+}
+
+.basket-container-inner .sub-total
+{
+    font-size: 22px;
+    padding: 20px 0;
+}
+
+.basket-container-inner .delivery-text
+{
+    font-size: 12px;
+    font-style: italic;
 }
 
 .basket-container .icon
