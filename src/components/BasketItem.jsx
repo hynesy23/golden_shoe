@@ -1,8 +1,6 @@
 import React from 'react';
 import shoeImage from '../images/shoe.jpg';
 
-import $ from 'jquery';
-
 import { RiDeleteBin6Line } from 'react-icons/ri'
 
 export const BasketItem = ({ item, basket }) => {

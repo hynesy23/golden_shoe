@@ -8,8 +8,6 @@ import { getAllShoes } from '../api';
 
 import { CollectionCard } from './CollectionCard';
 
-import { formatPrices } from '../utils'
-
 export const CollectionsPage = () => {
 
     const [shoes, setShoes] = useState([])
@@ -24,7 +22,7 @@ export const CollectionsPage = () => {
             setShoes(shoes)
         }
         fetchShoes();
-    }, [])
+    }, [category])
 
     const handleFilter = (e) => {
         const target = e.target;
