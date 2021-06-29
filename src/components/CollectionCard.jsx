@@ -46,9 +46,9 @@ export const CollectionCard = ({ shoe }) => {
                 <BsFillHeartFill className="icon full-heart" onClick={handleAddToWishlist} data-remove="true"/>
             </div>
             <div className="header">{shoe.name}</div>
-            <div>£{shoe.price.toFixed(2)}</div>
+            <div>£{shoe.price}</div>
             <div>
-                <Link to={`/products/${shoe.name}`}><div>VIEW</div></Link>
+                <Link to={`/products/${shoe.id}`}><div>VIEW</div></Link>
                 <div>ADD TO CART</div>
             </div>
         </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import '../styles/collection.css'
+
 import {getAllShoes} from '../api';
 
 import { CollectionCard } from './CollectionCard';
@@ -10,13 +12,17 @@ export const CollectionsPage = () => {
 
     const [shoes, setShoes] = useState([])
 
+    const location = useLocation();
+    const category = location.pathname.split('/')[2];
+
     useEffect(() => {
-        const shoes = getAllShoes();
-        setShoes(shoes)
+        const fetchShoes = async() => {
+            const shoes = await getAllShoes( category );
+            setShoes(shoes)
+        }
+        fetchShoes();
     }, [])
 
-    const location = useLocation();
-    const category = location.pathname.split('/')[1];
     return (
         <div className="page-container">
             <div className="card-container">

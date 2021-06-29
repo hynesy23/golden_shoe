@@ -1,0 +1,50 @@
+/* Cards Styling */
+
+.card-container-inner
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.card-header
+{
+    text-transform: capitalize;
+    width: 100%;
+    font-size: 22px;
+    padding-bottom: 1em;
+}
+
+.card-item
+{
+    text-align: center;
+}
+
+.card-item .header
+{
+    font-size: 22px;
+}
+
+.card-item .image
+{
+    position: relative;
+}
+
+.card-item .image .icon 
+{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 18px;
+    color: var(--red);
+}
+
+.card-item .image .full-heart 
+{
+    display: none;
+}
+
+.card-item .image .icon:hover
+{
+    cursor: pointer;
+}

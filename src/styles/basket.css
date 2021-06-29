@@ -1,0 +1,105 @@
+/* Basket Styles */
+
+.overlay
+{
+    height: 100vh;
+    width: calc(100vw - 450px);
+    background-color: lightgray;
+    opacity: 0.5;
+    position: fixed;
+    display: none;
+    z-index: 9;
+}
+
+.basket-container
+{
+    position: absolute;
+    top: 0;
+    right: -520px;
+    width: 450px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 9999;
+    transition: right 500ms;
+    /* display: none; */
+}
+
+.basket-container-inner
+{
+    position: relative;
+    padding: 50px 20px 20px 50px;
+}
+
+.basket-container .icon
+{
+    color: var(--red);
+    font-size: 25px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.basket-container .icon:hover
+{
+    cursor: pointer;
+}
+
+.basket-container-inner .header
+{
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.basket-container-inner .basket-item
+{
+    display: flex;
+    color: black;
+}
+
+.basket-container-inner .basket-item .image-container
+{
+    height: 150px;
+    width: 150px;
+}
+
+.basket-container-inner .basket-item .image-container img
+{
+    object-fit: contain;
+}
+
+.basket-container-inner .basket-item .text-container
+{
+    padding-left: 20px;
+}
+
+.basket-container-inner .basket-item .text-container .header
+{
+    font-size: 24px;
+}
+
+.basket-container-inner .basket-item .text-container .item
+{
+    padding: 5px 0;
+}
+
+.basket-container-inner .button 
+{
+    width: 200px;
+    border: 1px solid var(--red);
+    background-color: var(--red);
+    color: #fff;
+    /* transition: background-color 500ms;
+    transition: color 500ms; */
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.basket-container-inner .button:hover
+{
+    border: 1px solid var(--red);
+    background-color: #fff;
+    color: var(--red);
+    cursor: pointer;
+}

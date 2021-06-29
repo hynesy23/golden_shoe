@@ -2,6 +2,8 @@ import {React, useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { AiFillStar } from 'react-icons/ai';
 
+import '../styles/product.css'
+
 import {handleSuccessModal} from '../utils/index'
 
 import { getSingleShoe } from '../api';
@@ -18,16 +20,19 @@ export const ProductPage = ({addToBasket}) => {
     const [shoe, setShoe] = useState(null);
     const [sizes, setSizes] = useState([]);
     const [size, setSize] = useState(0);
-    const [sizeError, setSizeError] = useState("")
+    const [sizeError, setSizeError] = useState("");
     const location = useLocation();
-    const shoeName = location.pathname.split('/')[2];
+    const shoeId = location.pathname.split('/')[2];
 
     useEffect(() => {
-        console.log('useEffect')
-        const shoe = getSingleShoe( shoeName )
-        setShoe( shoe )
-        setSizes( shoe.sizes )
-    }, [shoeName])
+        const fetchSingleShoe = async() => {
+            console.log('useEffect')
+            const shoe = getSingleShoe( shoeId )
+            setShoe( shoe )
+            setSizes( shoe.sizes )
+        }
+        fetchSingleShoe();
+    }, [shoeId])
 
     
     const getSize = (e) => {

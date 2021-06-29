@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import '../styles/basket.css'
+
 import {RiCloseFill} from 'react-icons/ri';
 
 import shoeImage from '../images/shoe.jpg'

@@ -3,6 +3,8 @@ import SaleBlock from './SaleBlock'
 import CollectionList from './CollectionList';
 import {ShoesDiaries} from './ShoesDiaries';
 
+import '../styles/homepage.css'
+
 export const Homepage = () => {
     return (
         <div className="page-container">

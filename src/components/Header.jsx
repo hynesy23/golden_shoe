@@ -2,6 +2,8 @@ import { React, useState } from 'react'
 
 import { Link } from 'react-router-dom';
 
+import '../styles/header.css'
+
 import AnnouncementBar from './AnnouncementBar'
 import { DropdownMenu } from './DropdownMenu'
 import {showDropDownMenu} from '../utils'
