@@ -104,6 +104,11 @@
     cursor: pointer;
 }
 
+.size-container select[ disabled ]:hover
+{
+    cursor: default
+}
+
 .page-container .top-half .text-container .cta-container 
 {
     display: flex;
@@ -116,12 +121,32 @@
     border: 1px solid var(--red);
     background-color: var(--red);
     color: #fff;
-    /* transition: background-color 500ms;
-    transition: color 500ms; */
+    transition: 500ms;
     padding: 10px 0;
     margin-right: 10px;
     text-align: center;
     border-radius: 4px;
+}
+
+.page-container .top-half .text-container .cta-container .oos-button
+{
+    width: 225px;
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    color: #000;
+    transition: 500ms;
+    padding: 10px 0;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.page-container .top-half .text-container .cta-container .oos-button:hover
+{
+    border: 1px solid lightgray;
+    background-color: #000;
+    color: lightgray; 
+    cursor: pointer;
 }
 
 .page-container .top-half .text-container .cta-container .button:hover

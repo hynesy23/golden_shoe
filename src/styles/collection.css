@@ -12,6 +12,7 @@
     border: 1px solid red;
     padding: 10px;
     border-radius: 5px;
+    height: fit-content;
 }
 
 .filter-container-inner
@@ -114,11 +115,35 @@
     }
 }
 
+@media only screen and ( max-width: 767px )
+{
+    .card-container
+    {
+        flex-direction: column;
+    }
+    .card-container .filter-container
+    {
+        margin: auto;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        width: 70%;
+    }
+}
+
 @media only screen and ( max-width: 700px )
 {
     .card-container-inner
     {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and ( max-width: 500px )
+{
+    .card-container .filter-container
+    {
+        width: 90%;
     }
 }
 

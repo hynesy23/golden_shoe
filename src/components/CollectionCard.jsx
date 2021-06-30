@@ -1,24 +1,25 @@
-import React from 'react';
-// import { useState } from 'react';
+import { React, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import shoeImage from '../images/shoe.jpg'
-
-// import { handleAddToWishlist } from '../utils'
+import shoeImage from '../images/shoe.jpg';
 
 import { BsFillHeartFill, BsHeart } from 'react-icons/bs';
 
 
 export const CollectionCard = ({ shoe }) => {
-    // const [notInWishList, setnotInWishList] = useState(true)
+    // const [wishlistPopulated, setWishlistPopulated] = useState(false)
 
-    const handleAddToWishlist = (element) => {
-        // const { target } = element;
+    const handleAddToWishlist = (e) => {
+        const target = e.target;
+        // const parent = target.closest( ".card-item" );
+        // const shoeName = parent.dataset.name;
+        // localStorage.setItem( 'wishlist', JSON.stringify(shoeName) );
+        // setWishlistPopulated(true);
     }
 
     return (
-        <div className="card-item">
+        <div className="card-item" data-name={shoe.name}>
             <div className="image">
                 <img src={shoeImage} alt="" />
                 <BsHeart className="icon empty-heart" onClick={handleAddToWishlist} data-add="true"/>

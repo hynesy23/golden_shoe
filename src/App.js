@@ -17,8 +17,8 @@ import { ChatWidget } from './components/ChatWidget';
 
 export const App = () => {
   const [basket, setBasket] = useState([]);
-  const [showBasket, setshowBasket] = useState(false)
-  const [itemCount, setItemCount] = useState(0)
+  const [showBasket, setshowBasket] = useState(false);
+  const [itemCount, setItemCount] = useState(0);
 
     const handleBasketVisibility = () => {
         const basket = document.querySelector( ".basket-container" );

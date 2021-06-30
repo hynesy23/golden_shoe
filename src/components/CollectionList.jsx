@@ -1,40 +1,42 @@
 import React from 'react'
+import { HomepageCollectionCard } from './HomepageCollectionCard';
+
 import mensShoes from '../images/mens-shoes.jpg';
 import womensShoes from '../images/womens-footwear.jpg';
 import kidsShoes from '../images/kids-shoes.jpg';
 import allShoes from '../images/all_shoes.jpg';
-import { HomepageCollectionCard } from './HomepageCollectionCard';
 
 import { Link } from 'react-router-dom';
 
-const categories = [
-    {
-        name: "Shop All",
-        image: allShoes,
-        cta: "Shop Now",
-        link: "all"
-    },
-    {
-        name: "Men's Collection",
-        image: mensShoes,
-        cta: "Shop Now",
-        link: "mens"
-    },
-    {
-        name: "Ladies Collection",
-        image: womensShoes,
-        cta: "Shop Now",
-        link: "ladies"
-    },
-    {
-        name: "Kids Collection",
-        image: kidsShoes,
-        cta: "Shop Now",
-        link: "kids"
-    }
-]
-
 const CollectionList = () => {
+
+    const categories = [
+        {
+            name: "Shop All",
+            image: allShoes,
+            cta: "Shop Now",
+            link: "all"
+        },
+        {
+            name: "Men's Collection",
+            image: mensShoes,
+            cta: "Shop Now",
+            link: "mens"
+        },
+        {
+            name: "Ladies Collection",
+            image: womensShoes,
+            cta: "Shop Now",
+            link: "ladies"
+        },
+        {
+            name: "Kids Collection",
+            image: kidsShoes,
+            cta: "Shop Now",
+            link: "kids"
+        }
+    ]
+
     return (
         <div>
             {categories && 

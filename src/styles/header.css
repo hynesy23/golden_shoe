@@ -68,6 +68,7 @@
 .header-container .category-item
 {
     position: relative;
+    text-transform: capitalize;
 }
 
 .parent:hover::after

@@ -47,7 +47,7 @@ export const Basket = ({ handleBasketVisibility }) => {
                         })}
                         <div className="sub-total">Subtotal: £{subTotal}</div>
                         <div className="delivery-text">
-                            ** FREE DELIVERY ON ORDERS OVER £50. £5 NEXT WORKING DAY DELIVERY. ALL OTHER DELIVERIES £7.50
+                            ** FREE DELIVERY ON ALL ORDERS **
                         </div>
                         <Link to="/checkout" onClick={handleBasketVisibility}><div className="button">PROCEED TO CHECKOUT</div></Link>
                     </div>

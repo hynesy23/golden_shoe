@@ -71,6 +71,7 @@ export const ProductPage = ({addToBasket}) => {
                     <div className="text-container">
                         <div className="header">{shoe.name}</div>
                         <div className="price">£{shoe.price}</div>
+                        <div className="price">{shoe.stock ? <p>In Stock!</p> : <p>Out of Stock!</p>}</div>
                         <div className="icons-container">
                             <AiFillStar className="icon"/>
                             <AiFillStar className="icon"/>
@@ -81,7 +82,7 @@ export const ProductPage = ({addToBasket}) => {
                         </div>
                         <div className="fit-finder"><img src={fitFinderImage} alt="" /></div>
                         <div className="size-container">
-                            <select name="" id="" onChange={getSize}>
+                            <select disabled={shoe.stock ? "true" : "false"} onChange={getSize}>
                                 <option value="" selected disabled>Select a Size</option>
                                 {sizes && sizes.map( (size, i) => {
                                     return(
@@ -93,7 +94,10 @@ export const ProductPage = ({addToBasket}) => {
                         </div>
                         <div></div>
                         <div className="cta-container">
+                            {shoe.stock ? 
                             <div className="button" onClick={handleAddToBasket}>Add to Basket</div>
+                            :
+                            <div className="oos-button" onClick={handleAddToBasket}>Email me When Available</div>}
                             {/* <div className="button">Collect in Store</div> */}
                         </div>
                         <div className="klarna">

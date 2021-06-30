@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-const announcements = [ "Free deliveries on orders over £50", "10% student discount", "Buy now Pay Later", "Returns Information" ];
+const announcements = [ "Free deliveries on ALL ORDERS", "10% student discount", "Buy now Pay Later", "Returns Information" ];
 
 class AnnouncementBar extends Component {
   render() {
